@@ -1,0 +1,16 @@
+#!/bin/sh
+echo "Setting host name..."
+sudo scutil --set HostName      "sowderca-macOS"
+echo "Done!"
+echo "Setting comptuer name..."
+sudo scutil --set ComputerName  "sowderca-macOS"
+echo "Done!"
+echo "Setting local host name..."
+sudo scutil --set LocalHostName "sowderca-macOS"
+echo "Done!"
+echo "Setting net bios name..."
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "sowderca-macOS"
+echo "Done!"
+echo "Flushing cache..."
+dscacheutil -flushcache
+echo "Done!"
